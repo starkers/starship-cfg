@@ -3,15 +3,14 @@
 Starship is great but it doesn't allow you its configuration to come from more than one file.
 This is a problem if there are certain things in your configuration that you would not like to be public.
 
-This don't seem to have an appetite to adress this:
+There does not seem to have an appetite to adress this:
 - https://github.com/starship/starship/issues/5341
-
 
 This tool will do this before starship loads. It works by:
 
 
 
-1. reading all `*.toml` files from `${XDG_CONFIG_HOME-:~/.config}/starship.d/`
+1. reading all `*.toml` files from `${XDG_CONFIG_HOME}/starship.d/`  (typically `~/.config/starship.d`)
 2. merging them
 3. writing the result to `${XDG_CONFIG_HOME}/starship.toml`
 
@@ -56,3 +55,10 @@ end
 ```
 
 Don't forget to move your config(s) into `~/.config/starship.d/` !
+
+
+
+# TODO
+
+- [ ] support native `$STARSHIP_CONFIG` [configuration](https://starship.rs/config/#config-file-location)
+- [ ] debug mode?

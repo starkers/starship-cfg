@@ -13,8 +13,6 @@ import (
 )
 
 func main() {
-	// log.Println("CFG", xdg.ConfigHome)
-
 	starshipConfigFile, err := xdg.ConfigFile("starship.toml")
 	if err != nil {
 		log.Fatal(err)
@@ -42,7 +40,7 @@ func main() {
 		}
 	}
 
-	// define the unmarshallers for the given file extensions, blank extension is the global unmarshaller
+	// define the unmarshallers for (toml only)
 	conflate.Unmarshallers = conflate.UnmarshallerMap{
 		".toml": conflate.UnmarshallerFuncs{conflate.TOMLUnmarshal},
 	}
