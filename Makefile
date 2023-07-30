@@ -1,9 +1,10 @@
 SHELL := /usr/bin/env bash
 VERSION := $(shell git describe --always --dirty --tags 2> /dev/null || "undefined")
-BINARY := starship-cfg-${VERSION}
+NAME := starship-cfg
+BINARY := ${NAME}-${VERSION}
 ECHO = echo -e
 
-REPO ?= github.com/starkers/starship-cfg
+REPO ?= github.com/starkers/${NAME}
 
 DEFAULT_GOAL:=help
 
@@ -29,5 +30,5 @@ build:
 ## Clean artifacts
 #
 clean:
-	rm -v ggg-*
+	rm -v ${NAME}**
 
